@@ -17,6 +17,7 @@ var app = new Vue({
         title: this.newTask,
         done: false,
       });
+      this.newTask = '';
     },
     deleteTask: function () {
       this.todos = this.todos.filter((todo) => {
