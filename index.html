@@ -19,7 +19,7 @@
                 {{ todo.title }}
             </li>
         </ul>
-        <p v-else>タスクがありません</p>
+        <p v-else>タスクがありません。</p>
         <input type='text' v-model='newTask' v-on:keyup.enter='addTask' name="addTask">
         <p>{{ todos.length }}件中{{ isDone }}件が完了</p>
         <button type='button' v-on:click='deleteTask'>完了したタスクを削除</button>
