@@ -3,7 +3,16 @@ var app = new Vue({
   vuetify: new Vuetify(),
   data: {
     newTask: '',
-    todos: [],
+    todos: [
+      {
+        title: 'task sample',
+        done: false,
+      },
+      {
+        title: 'todo sample',
+        done: false,
+      },
+    ],
   },
   computed: {
     isDone: function () {
