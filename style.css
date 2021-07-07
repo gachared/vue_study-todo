@@ -2,7 +2,18 @@
   color: #ddd;
 }
 
-.note {
-  font-size: 75%;
-  margin-top: 4px;
+#app {
+  max-width: 80%;
+}
+
+.taskarea {
+  min-height: 100px;
+}
+
+.inptxt {
+  margin-top: 16px;
+}
+
+.progtxt {
+  margin-left: 16px;
 }

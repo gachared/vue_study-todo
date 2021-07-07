@@ -16,17 +16,31 @@
     <div id='app'>
         <v-app>
             <v-container>
-                <ul v-if='todos.length >=1'>
-                    <li v-for='todo in todos' v-bind:class='{done: todo.done}'>
-                        <span><input type='checkbox' v-model='todo.done'></span>
-                        {{ todo.title }}
-                    </li>
-                </ul>
-                <p v-else>タスクがありません</p>
-                <input type='text' v-model='newTask' v-on:keyup.enter='addTask' id='taskInput'>
-                <p class='note'>タスクを入力してEnterキーを押してください</p>
-                <p>{{ todos.length }}件中{{ isDone }}件が完了しました</p>
-                <button type='button' v-on:click='deleteTask'>完了したタスクを削除する</button>
+                <div class="taskarea">
+                    <ul v-if='todos.length >=1'>
+                        <li v-for='todo in todos' :class='{done: todo.done}'>
+                            <v-checkbox color="indigo" :label='todo.title' hide-details v-model='todo.done'>
+                            </v-checkbox>
+
+                        </li>
+                    </ul>
+                    <p v-else>
+                        <v-alert border="bottom" colored-border type="warning" elevation="2" max-width='80%'>
+                            タスクがありません
+                        </v-alert>
+                    </p>
+                </div>
+                <div class="inptxt">
+                    <v-text-field v-model='newTask' v-on:keyup.enter='addTask' id='taskInput' label="タスク名を入力してください"
+                        hint='入力後にEnterキーを押してください' clearable persistent-hint filled>
+                    </v-text-field>
+                </div>
+                <p>
+                    <v-progress-circular :value="progress" rotate='-90' color="deep-orange lighten-2">
+                    </v-progress-circular><span class="progtxt">{{ todos.length }}件中{{ isDone }}件が完了しました</span>
+                </p>
+                <v-btn color='primary' elevation="2" large type='button' v-on:click='deleteTask'>完了したタスクを削除する</v-btn>
+
             </v-container>
         </v-app>
     </div>

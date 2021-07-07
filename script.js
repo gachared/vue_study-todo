@@ -11,6 +11,10 @@ var app = new Vue({
         return todo.done;
       }).length;
     },
+    progress: function () {
+      return 100 * (this.isDone / this.todos.length);
+      //return 50;
+    },
   },
   methods: {
     addTask: function () {
