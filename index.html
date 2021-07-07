@@ -16,7 +16,7 @@
     <div id='app'>
         <v-app>
             <v-container>
-                <div class="taskarea">
+                <div class>
                     <ul v-if='todos.length >=1'>
                         <li v-for='todo in todos' :class='{done: todo.done}'>
                             <v-checkbox color="indigo" :label='todo.title' hide-details v-model='todo.done'>
