@@ -5,27 +5,34 @@
     <meta charset='UTF-8'>
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
     <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/@mdi/font@4.x/css/materialdesignicons.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.min.css" rel="stylesheet">
     <link rel='stylesheet' href='./style.css'>
-    <script src='https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js'></script>
     <title>Document</title>
 </head>
 
 <body>
-
     <div id='app'>
-        <ul v-if='todos.length >=1'>
-            <li v-for='todo in todos' v-bind:class='{done: todo.done}'>
-                <span><input type='checkbox' v-model='todo.done'></span>
-                {{ todo.title }}
-            </li>
-        </ul>
-        <p v-else>タスクがありません</p>
-        <input type='text' v-model='newTask' v-on:keyup.enter='addTask' id='taskInput'>
-        <p class='note'>タスクを入力してEnterキーを押してください</p>
-        <p>{{ todos.length }}件中{{ isDone }}件が完了しました</p>
-        <button type='button' v-on:click='deleteTask'>完了したタスクを削除する</button>
+        <v-app>
+            <v-container>
+                <ul v-if='todos.length >=1'>
+                    <li v-for='todo in todos' v-bind:class='{done: todo.done}'>
+                        <span><input type='checkbox' v-model='todo.done'></span>
+                        {{ todo.title }}
+                    </li>
+                </ul>
+                <p v-else>タスクがありません</p>
+                <input type='text' v-model='newTask' v-on:keyup.enter='addTask' id='taskInput'>
+                <p class='note'>タスクを入力してEnterキーを押してください</p>
+                <p>{{ todos.length }}件中{{ isDone }}件が完了しました</p>
+                <button type='button' v-on:click='deleteTask'>完了したタスクを削除する</button>
+            </v-container>
+        </v-app>
     </div>
-    <script src='./script.js'></script>
+    <script src='https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js'></script>
+    <script src="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.js"></script>
+    <script src="./script.js"></script>
 </body>
 
 </html>
