@@ -40,6 +40,9 @@
                     </v-progress-circular><span class='progtxt'>{{ todos.length }}件中{{ isDone }}件が完了しました</span>
                 </p>
                 <v-btn color='primary' elevation='2' large type='button' @click='deleteTask'>完了したタスクを削除する</v-btn>
+                <v-snackbar v-model='snackbar.visible' :timeout='snackbar.timeout'>
+                    {{ snackbar.text }}
+                </v-snackbar>
 
             </v-container>
         </v-app>

@@ -13,6 +13,11 @@ var app = new Vue({
         done: false,
       },
     ],
+    snackbar: {
+      visible: false,
+      text: '',
+      timeout: 1500,
+    },
   },
   computed: {
     isDone: function () {
@@ -34,6 +39,8 @@ var app = new Vue({
       this.newTask = '';
     },
     deleteTask: function () {
+      this.snackbar.text = this.isDone + '件のタスクを削除しました';
+      this.snackbar.visible = true;
       this.todos = this.todos.filter((todo) => {
         return !todo.done;
       });
