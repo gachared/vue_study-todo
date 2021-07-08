@@ -5,9 +5,9 @@
     <meta charset='UTF-8'>
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
     <meta name='viewport' content='width=device-width, initial-scale=1.0'>
-    <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/@mdi/font@4.x/css/materialdesignicons.min.css" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.min.css" rel="stylesheet">
+    <link href='https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900' rel='stylesheet'>
+    <link href='https://cdn.jsdelivr.net/npm/@mdi/font@4.x/css/materialdesignicons.min.css' rel='stylesheet'>
+    <link href='https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.min.css' rel='stylesheet'>
     <link rel='stylesheet' href='./style.css'>
     <title>Document</title>
 </head>
@@ -19,34 +19,34 @@
                 <div class>
                     <ul v-if='todos.length >=1'>
                         <li v-for='todo in todos' :class='{done: todo.done}'>
-                            <v-checkbox color="indigo" :label='todo.title' hide-details v-model='todo.done'>
+                            <v-checkbox color='indigo' :label='todo.title' hide-details v-model='todo.done'>
                             </v-checkbox>
 
                         </li>
                     </ul>
                     <p v-else>
-                        <v-alert border="bottom" colored-border type="warning" elevation="2" max-width='80%'>
+                        <v-alert border='bottom' colored-border type='warning' elevation='2' max-width='80%'>
                             タスクがありません
                         </v-alert>
                     </p>
                 </div>
-                <div class="inptxt">
-                    <v-text-field v-model='newTask' v-on:keyup.enter='addTask' id='taskInput' label="タスク名を入力してください"
+                <div class='inptxt'>
+                    <v-text-field v-model='newTask' v-on:keyup.enter='addTask' id='taskInput' label='タスク名を入力してください'
                         hint='入力後にEnterキーを押してください' clearable persistent-hint filled>
                     </v-text-field>
                 </div>
                 <p>
-                    <v-progress-circular :value="progress" rotate='-90' color="deep-orange lighten-2">
-                    </v-progress-circular><span class="progtxt">{{ todos.length }}件中{{ isDone }}件が完了しました</span>
+                    <v-progress-circular :value='progress' rotate='-90' color='deep-orange lighten-2'>
+                    </v-progress-circular><span class='progtxt'>{{ todos.length }}件中{{ isDone }}件が完了しました</span>
                 </p>
-                <v-btn color='primary' elevation="2" large type='button' v-on:click='deleteTask'>完了したタスクを削除する</v-btn>
+                <v-btn color='primary' elevation='2' large type='button' v-on:click='deleteTask'>完了したタスクを削除する</v-btn>
 
             </v-container>
         </v-app>
     </div>
     <script src='https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js'></script>
-    <script src="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.js"></script>
-    <script src="./script.js"></script>
+    <script src='https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.js'></script>
+    <script src='./script.js'></script>
 </body>
 
 </html>
