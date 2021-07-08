@@ -31,7 +31,7 @@
                     </p>
                 </div>
                 <div class='inptxt'>
-                    <v-text-field v-model='newTask' v-on:keyup.enter='addTask' id='taskInput' label='タスク名を入力してください'
+                    <v-text-field v-model='newTask' @keyup.enter='addTask' id='taskInput' label='タスク名を入力してください'
                         hint='入力後にEnterキーを押してください' clearable persistent-hint filled>
                     </v-text-field>
                 </div>
@@ -39,7 +39,7 @@
                     <v-progress-circular :value='progress' rotate='-90' color='deep-orange lighten-2'>
                     </v-progress-circular><span class='progtxt'>{{ todos.length }}件中{{ isDone }}件が完了しました</span>
                 </p>
-                <v-btn color='primary' elevation='2' large type='button' v-on:click='deleteTask'>完了したタスクを削除する</v-btn>
+                <v-btn color='primary' elevation='2' large type='button' @click='deleteTask'>完了したタスクを削除する</v-btn>
 
             </v-container>
         </v-app>
